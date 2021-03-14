@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- view层-->
+<div id="app">
+
+    <!--组件：传递给组件中的值 props-->
+    <qinjaing v-for="item in items" v-bind:data="item"></qinjaing>
+
+
+</div>
+
+<!-- 导入vue.js-->
+<script src="https://cdn.bootcss.com/vue/2.5.21/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script>
+<script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js"></script>
+
+<script>
+    //定义一个Vue组件component
+    Vue.component("qinjaing",{
+        props:['data'],
+        template:'<li>{{data}}</li>'
+    });
+
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            items:["java","Linux","前端"]
+        }
+    });
+</script>
+</body>
+</html>

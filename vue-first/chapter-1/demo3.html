@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<!-- view层-->
+<div id="app">
+    <button v-on:click="sayHi"> click me</button>
+</div>
+
+<!-- 导入vue.js-->
+<script src="https://cdn.bootcss.com/vue/2.5.21/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"></script>
+<script src="https://cdn.bootcss.com/vuex/3.0.1/vuex.min.js"></script>
+
+<script>
+    var vm = new Vue({
+        el: "#app",
+        //model :数据
+        data: {
+            message: "狂神说java"
+        },
+        methods: {//方法必须定义在Vue 的 method对象中,v-on：事件
+            sayHi: function (event) {
+                alert(this.message);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
